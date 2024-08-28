@@ -1,0 +1,61 @@
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://qds7c63rhgpg"]
+
+[ext_resource type="Texture2D" uid="uid://5i1suiogfl5i" path="res://resource/arrow_basic_s_small.png" id="1_15sqj"]
+[ext_resource type="Texture2D" uid="uid://deu5a32xntbld" path="res://resource/button_rectangle_depth_gloss.png" id="2_ynqea"]
+[ext_resource type="Texture2D" uid="uid://cnqtshghpegnf" path="res://resource/button_rectangle_depth_gradient.png" id="3_wk34w"]
+[ext_resource type="Texture2D" uid="uid://c80qo4q2bnjqt" path="res://resource/button_rectangle_depth_border.png" id="4_3chmt"]
+[ext_resource type="Texture2D" uid="uid://l0fbkrcjcj2a" path="res://resource/button_round_border.png" id="5_cus0l"]
+[ext_resource type="Texture2D" uid="uid://uk0a8krk50w0" path="res://resource/button_round_flat.png" id="6_foitv"]
+[ext_resource type="Texture2D" uid="uid://u0alotk066m7" path="res://resource/button_rectangle_line.png" id="7_03g35"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iljtr"]
+texture = ExtResource("2_ynqea")
+texture_margin_left = 30.0
+texture_margin_top = 10.0
+texture_margin_right = 30.0
+texture_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8up2m"]
+texture = ExtResource("3_wk34w")
+texture_margin_left = 30.0
+texture_margin_top = 10.0
+texture_margin_right = 30.0
+texture_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6xjol"]
+texture = ExtResource("4_3chmt")
+texture_margin_left = 30.0
+texture_margin_top = 10.0
+texture_margin_right = 30.0
+texture_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p1m3h"]
+bg_color = Color(0, 0, 0, 0.521569)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0oxwk"]
+texture = ExtResource("7_03g35")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[resource]
+Label/colors/font_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_focus_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_hover_color = Color(0, 0, 0, 1)
+OptionButton/constants/arrow_margin = 12
+OptionButton/icons/arrow = ExtResource("1_15sqj")
+OptionButton/styles/hover = SubResource("StyleBoxTexture_iljtr")
+OptionButton/styles/normal = SubResource("StyleBoxTexture_8up2m")
+OptionButton/styles/pressed = SubResource("StyleBoxTexture_6xjol")
+PopupMenu/colors/font_color = Color(0, 0, 0, 1)
+PopupMenu/colors/font_hover_color = Color(0, 0, 0, 1)
+PopupMenu/icons/radio_checked = ExtResource("5_cus0l")
+PopupMenu/icons/radio_unchecked = ExtResource("6_foitv")
+PopupMenu/styles/hover = SubResource("StyleBoxFlat_p1m3h")
+PopupMenu/styles/panel = SubResource("StyleBoxTexture_0oxwk")

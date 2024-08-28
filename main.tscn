@@ -1,0 +1,122 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsrrlihqvjje"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_u433l"]
+[ext_resource type="Texture2D" uid="uid://dn7l4i3im0x14" path="res://resource/bg_square_line.png" id="2_fjw18"]
+[ext_resource type="Script" path="res://option_button.gd" id="2_m1j1y"]
+[ext_resource type="Theme" uid="uid://qds7c63rhgpg" path="res://main.tres" id="3_re5bv"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u433l")
+
+[node name="BG" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.4
+anchor_right = 0.5
+anchor_bottom = 0.4
+offset_left = -318.5
+offset_top = -175.0
+offset_right = 318.5
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_fjw18")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.21
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -23.5
+offset_right = 70.0
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme = ExtResource("3_re5bv")
+text = "SELECT YOUR JOB:"
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_re5bv")
+text_direction = 1
+script = ExtResource("2_m1j1y")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.35
+anchor_right = 0.6
+anchor_bottom = 0.5
+offset_left = -69.5
+offset_top = -25.0
+offset_right = 69.5
+offset_bottom = 25.0
+grow_horizontal = 2
+theme_override_constants/separation = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="JobNameTitle" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_re5bv")
+text = "Job Name :"
+
+[node name="JobName" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_re5bv")
+text = "JobName"
+
+[node name="JobDescTitle" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_re5bv")
+text = "Description :"
+
+[node name="JobDesc" type="Label" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme = ExtResource("3_re5bv")
+text = "JobDesc"
+autowrap_mode = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="JobSkillsTitle" type="Label" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("3_re5bv")
+text = "Skills :"
+
+[node name="JobSkills" type="Label" parent="HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("3_re5bv")
+text = "JobSkills"
+autowrap_mode = 3
+
+[connection signal="item_selected" from="VBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
